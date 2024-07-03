@@ -1,0 +1,1 @@
+This is a relatively basic, no frills, React.js portfolio that makes use of TailwindCSS for styling.
