@@ -2,21 +2,16 @@ import React from "react";
 
 const Header = () => {
     return (
-        <div>
-            <div>
-                <div>First Button</div>
-                <div>Second Button</div>
-                <div>Third Button</div>
+        <div className="p-2">
+            <div className="justify-center flex flex-row p-2 space-x-3">
+                <div className="p-2 border rounded bg-gray-500 hover:bg-pink-500">First Button</div>
+                <div className="p-2 border rounded bg-gray-500 hover:bg-pink-500">Second Button</div>
+                <div className="p-2 border rounded bg-gray-500 hover:bg-pink-500">Third Button</div>
             </div>
-            <div>
-                <div>Three Per Line</div>
-                <div>Fifth Button</div>
-                <div>Sixth Button</div>
-            </div>
-            <div>
-                <div>Seventh Button</div>
-                <div>Eigth Button</div>
-                <div>Ninth Button</div>
+            <div className="justify-center flex flex-row p-2 space-x-3">
+                <div className="p-2 border rounded bg-gray-500 hover:bg-pink-500">Three Per Line</div>
+                <div className="p-2 border rounded bg-gray-500 hover:bg-pink-500">Fifth Button</div>
+                <div className="p-2 border rounded bg-gray-500 hover:bg-pink-500">Sixth Button</div>
             </div>
         </div>
     );
