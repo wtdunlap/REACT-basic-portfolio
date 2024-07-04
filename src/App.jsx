@@ -1,11 +1,11 @@
 import Header from "./components/Header";
-import Card from "./components/Card";
+import Project from "./components/Project";
 
 function App() {
     return (
-        <div className="bg-pink-800 flex justify-center content-center flex-col ">
+        <div className="bg-pink-700 flex justify-top content-center flex-col h-screen">
             <Header />
-            <Card />
+            <Project />
         </div>
     );
 }
