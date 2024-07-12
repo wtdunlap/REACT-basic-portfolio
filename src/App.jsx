@@ -1,12 +1,13 @@
 import Header from "./components/Header";
-import Project from "./components/Project";
+import insertCard from "./utils/insertCard";
 
 function App() {
     return (
-        <div className="bg-pink-700 flex justify-top content-center flex-col h-screen">
-            <Header />
-            <Project />
-        </div>
+        <>
+            <div className="flex justify-top content-center flex-col">
+                <Header insertCard={insertCard}/>
+            </div>
+        </>
     );
 }
 
