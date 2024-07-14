@@ -1,28 +1,41 @@
 import { useState, useEffect } from "react";
+
+import manageLocal from "../utils/manageLocal";
+
 function Header() {
     const [index, setIndex] = useState(0);
-    
+    const [whichOne, setWhichOne] = useState("");
+
+    // Updates based on index, sets document title to whatever the index is currently set to.
+    //
+    // This doesn't really do much but it's kind of cool
     useEffect(() => {
         if (index === 0) {
-            document.title = "Portfolio"
+            document.title = "Portfolio";
         }
         if (index === 1) {
             document.title = "Github";
+            setWhichOne("Github");
         }
         if (index === 2) {
             document.title = "LinkedIn";
+            setWhichOne("Linkedin");
         }
         if (index === 3) {
             document.title = "Contact Me";
+            setWhichOne("Contact");
         }
         if (index === 4) {
             document.title = "Projects";
+            setWhichOne("Project");
         }
         if (index === 5) {
             document.title = "Home";
+            setWhichOne("Home");
         }
         if (index === 6) {
             document.title = "About Me";
+            setWhichOne("About");
         }
     }, [index]);
 
@@ -32,7 +45,8 @@ function Header() {
                 <button
                     onMouseEnter={() => setIndex(1)}
                     onClick={() => {
-                        console.log(index);
+                        manageLocal("Github");
+                        setWhichOne("Github");
                     }}
                     type="button"
                     className="p-2 border rounded bg-gray-500 hover:bg-pink-500"
@@ -42,7 +56,8 @@ function Header() {
                 <button
                     onMouseEnter={() => setIndex(2)}
                     onClick={() => {
-                        console.log(index);
+                        manageLocal("Linkedin");
+                        setWhichOne("Linkedin");
                     }}
                     type="button"
                     className="p-2 border rounded bg-gray-500 hover:bg-pink-500"
@@ -52,7 +67,8 @@ function Header() {
                 <button
                     onMouseEnter={() => setIndex(3)}
                     onClick={() => {
-                        console.log(index);
+                        manageLocal("Contact");
+                        setWhichOne("Contact");
                     }}
                     type="button"
                     className="p-2 border rounded bg-gray-500 hover:bg-pink-500"
@@ -64,7 +80,8 @@ function Header() {
                 <button
                     onMouseEnter={() => setIndex(4)}
                     onClick={() => {
-                        console.log(index);
+                        manageLocal("Project");
+                        setWhichOne("Project");
                     }}
                     type="button"
                     className="p-2 border rounded bg-gray-500 hover:bg-pink-500"
@@ -74,7 +91,8 @@ function Header() {
                 <button
                     onMouseEnter={() => setIndex(5)}
                     onClick={() => {
-                        console.log(index);
+                        manageLocal("Home");
+                        setWhichOne("Home");
                     }}
                     type="button"
                     className="p-2 border rounded bg-gray-500 hover:bg-pink-500"
@@ -84,7 +102,8 @@ function Header() {
                 <button
                     onMouseEnter={() => setIndex(6)}
                     onClick={() => {
-                        console.log(index);
+                        manageLocal("About");
+                        setWhichOne("About");
                     }}
                     type="button"
                     className="p-2 border rounded bg-gray-500 hover:bg-pink-500"
