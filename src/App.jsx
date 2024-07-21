@@ -1,74 +1,17 @@
-import HTMLReactParser from "html-react-parser";
-
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Github from "./components/Github";
-import Home from "./components/Home";
-import Linkedin from "./components/Linkedin";
-import Project from "./components/Project";
-import Header from "./components/Header";
-
-import returnElements from "./utils/returnElements";
-import manageLocal from "./utils/manageLocal";
+import Nav from "./components/Nav";
+import { Outlet } from "react-router-dom";
 
 function App() {
-    function htmlToReact() {
-        const html = returnElements(manageLocal("Home"));
-
-        const replace = (domNode) => {
-            if (domNode.attribs && domNode.attribs.id === "About") {
-                return (
-                    <>
-                        <About />
-                    </>
-                );
-            }
-            if (domNode.attribs && domNode.attribs.id === "Contact") {
-                return (
-                    <>
-                        <Contact />
-                    </>
-                );
-            }
-            if (domNode.attribs && domNode.attribs.id === "Github") {
-                return (
-                    <>
-                        <Github />
-                    </>
-                );
-            }
-            if (domNode.attribs && domNode.attribs.id === "Home") {
-                return (
-                    <>
-                        <Home />
-                    </>
-                );
-            }
-            if (domNode.attribs && domNode.attribs.id === "Linkedin") {
-                return (
-                    <>
-                        <Linkedin />
-                    </>
-                );
-            }
-            if (domNode.attribs && domNode.attribs.id === "Project") {
-                return (
-                    <>
-                        <Project />
-                    </>
-                );
-            }
-        };
-
-        return HTMLReactParser(html, { replace });
-    }
-
     return (
-        <div className="flex justify-top content-center flex-col">
-            <Header />
-            {htmlToReact()}
+        <div className="flex justify-top content-center flex-col sm:flex-row">
+            <div className="flex flex-col p-4">
+                <Nav />
+            </div>
+            <div className="flex justify-top content-center flex-col pt-4 sm:pr-4 sm:w-5/6 md:w-3/4 lg:w-2/3 xl:w-2/4 2xl:w-1/4">
+                <Outlet />
+            </div>
         </div>
-    )
+    );
 }
 
 export default App;
